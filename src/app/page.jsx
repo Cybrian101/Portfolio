@@ -5,6 +5,7 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { motion, useInView } from "framer-motion";
 
+
 // --- Global Styles for custom effects ---
 const GlobalStyles = () => (
   <style jsx="true" global="true">{`
@@ -645,7 +646,7 @@ const Header = ({ onMenuToggle }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ["about", "experience", "projects", "skills", "leadership"];
+  const navLinks = ["about", "experience", "projects", "skills", "leadership", "contact"];
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/80 backdrop-blur-lg' : 'bg-transparent'}`}>
@@ -671,7 +672,7 @@ const Header = ({ onMenuToggle }) => {
 
 
 const MobileMenu = ({ isOpen, onMenuToggle }) => {
-    const navLinks = ["about", "experience", "projects", "skills", "leadership"];
+    const navLinks = ["about", "experience", "projects", "skills", "leadership", "contact"];
     return (
         <div className={`fixed inset-0 bg-slate-900/95 backdrop-blur-lg z-50 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}>
             <div className="flex justify-end p-6">
@@ -841,6 +842,11 @@ export default function PortfolioPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { observe, isVisible } = useScrollAnimate();
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   
     const particlesInit = useCallback(async (engine) => {
         await loadSlim(engine);
@@ -921,7 +927,7 @@ export default function PortfolioPage() {
     projects: useRef(null),
     skills: useRef(null),
     leadership: useRef(null),
-    // contact: useRef(null),
+    contact: useRef(null),
   };
 
   useEffect(() => {
@@ -1002,12 +1008,12 @@ export default function PortfolioPage() {
     <div className="bg-slate-900 text-slate-300 leading-relaxed">
       <GlobalStyles />
       <CustomCursor />
-        <Particles
+        {isClient && <Particles
             id="tsparticles"
             init={particlesInit}
             options={particlesOptions}
             className="fixed inset-0 z-0"
-        />
+        />}
       <div className="relative z-10">
         <Header onMenuToggle={() => setIsMenuOpen(!isMenuOpen)} />
         <MobileMenu isOpen={isMenuOpen} onMenuToggle={() => setIsMenuOpen(false)} />
