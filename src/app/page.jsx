@@ -654,10 +654,10 @@ const Header = ({ onMenuToggle }) => {
           <a href="#" className="text-2xl font-bold text-cyan-400 transition hover:text-cyan-300 neon-text">MD</a>
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map(link => (
-              <a key={link} href={`#${link}`} className="text-lg capitalize text-slate-300 hover:text-cyan-400 transition-colors duration-300">{link}</a>
+              <a key={link} href={link === 'contact' ? '/contact' : `#${link}`} className="text-lg capitalize text-slate-300 hover:text-cyan-400 transition-colors duration-300">{link}</a>
             ))}
           </nav>
-            <a href="#contact" className="hidden md:inline-block px-5 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-lg transition-all duration-300 text-white font-semibold">
+            <a href="/contact" className="hidden md:inline-block px-5 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-lg transition-all duration-300 text-white font-semibold">
               Contact
             </a>
           <button onClick={onMenuToggle} className="md:hidden text-slate-300">
@@ -681,9 +681,9 @@ const MobileMenu = ({ isOpen, onMenuToggle }) => {
             </div>
             <nav className="flex flex-col items-center justify-center h-full -mt-16 space-y-8">
                 {navLinks.map(link => (
-                  <a key={link} href={`#${link}`} onClick={onMenuToggle} className="text-3xl capitalize text-slate-300 hover:text-cyan-400 transition-colors duration-300">{link}</a>
+                  <a key={link} href={link === 'contact' ? '/contact' : `#${link}`} onClick={onMenuToggle} className="text-3xl capitalize text-slate-300 hover:text-cyan-400 transition-colors duration-300">{link}</a>
                 ))}
-                  <a href="#contact" onClick={onMenuToggle} className="mt-4 inline-block px-8 py-3 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 font-semibold">
+                  <a href="/contact" onClick={onMenuToggle} className="mt-4 inline-block px-8 py-3 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 font-semibold">
                     Contact
                   </a>
             </nav>
@@ -808,76 +808,6 @@ const HeroSection = ({ onResumeView }) => {
     );
 };
 
-
-const ContactModal = ({ isOpen, onClose }) => {
-    const [status, setStatus] = useState('');
-
-    if (!isOpen) return null;
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setStatus('Sending...');
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData.entries());
-
-        try {
-            const response = await fetch('/api/send-email', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data),
-            });
-
-            if (response.ok) {
-                setStatus('Message sent successfully!');
-                setTimeout(() => {
-                    onClose();
-                    setStatus('');
-                }, 2000);
-            } else {
-                const errorData = await response.json();
-                setStatus(`Error: ${errorData.error}`);
-            }
-        } catch (error) {
-            setStatus('Error: Could not send message.');
-        }
-    };
-    
-    const handleBackdropClick = (e) => {
-        if (e.target === e.currentTarget) {
-            onClose();
-        }
-    };
-
-    return (
-        <div className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex justify-center items-center z-50" onClick={handleBackdropClick}>
-            <div className="glass-card rounded-xl p-8 w-full max-w-md m-4 relative">
-                <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
-                    <XIcon />
-                </button>
-                <h2 className="text-2xl font-bold text-white mb-6 text-center">Contact Me</h2>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-1">Name</label>
-                        <input type="text" id="name" name="name" required className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:ring-cyan-500 focus:border-cyan-500 transition" />
-                    </div>
-                    <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-1">Email</label>
-                        <input type="email" id="email" name="email" required className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:ring-cyan-500 focus:border-cyan-500 transition" />
-                    </div>
-                    <div>
-                        <label htmlFor="purpose" className="block text-sm font-medium text-slate-300 mb-1">Purpose</label>
-                        <textarea id="purpose" name="purpose" rows="4" required className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 focus:ring-cyan-500 focus:border-cyan-500 transition"></textarea>
-                    </div>
-                    <button type="submit" className="w-full bg-cyan-600 text-white font-semibold py-2 rounded-lg hover:bg-cyan-500 transition disabled:opacity-50" disabled={status === 'Sending...'}>
-                        {status || 'Send Message'}
-                    </button>
-                </form>
-            </div>
-        </div>
-    );
-};
-
-
 const ResumeViewerModal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
     
@@ -910,7 +840,6 @@ const ResumeViewerModal = ({ isOpen, onClose }) => {
 export default function PortfolioPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { observe, isVisible } = useScrollAnimate();
-  const [isContactOpen, setIsContactOpen] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   
     const particlesInit = useCallback(async (engine) => {
@@ -1037,7 +966,6 @@ export default function PortfolioPage() {
         category: "AI & Cybersecurity", 
         icons: [
             { name: 'Generative AI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
-            // { name: 'NLP', icon: 'https://img.icons8.com/plasticine/100/natural-language-processing.png' },
             { name: 'LangChain', icon: 'https://avatars.githubusercontent.com/u/120268689?s=200&v=4' },
             { name: 'VAPT', icon: 'https://img.icons8.com/fluency/96/cyber-security.png' },
             { name: 'Secure Coding', icon: 'https://img.icons8.com/plasticine/100/lock.png' },
@@ -1051,7 +979,6 @@ export default function PortfolioPage() {
             { name: 'FastAPI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
             { name: 'Selenium', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg' },
             { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
-            // { name: 'Qdrant', icon: 'https://qdrant.tech/images/qdrant_symbol_color.svg' },
             { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
         ]
     }
@@ -1084,7 +1011,6 @@ export default function PortfolioPage() {
       <div className="relative z-10">
         <Header onMenuToggle={() => setIsMenuOpen(!isMenuOpen)} />
         <MobileMenu isOpen={isMenuOpen} onMenuToggle={() => setIsMenuOpen(false)} />
-        <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
         <ResumeViewerModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
 
         <main className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -1213,9 +1139,9 @@ export default function PortfolioPage() {
                     <h2 className="text-4xl font-bold text-white">Get In Touch</h2>
                     <div className="w-24 h-1 bg-cyan-500 mx-auto mt-2"></div>
                     <p className="mt-6 text-lg max-w-2xl mx-auto text-slate-400">I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out!</p>
-                    <button onClick={() => setIsContactOpen(true)} className="mt-8 inline-flex items-center bg-cyan-600 text-white text-lg font-semibold px-8 py-3 rounded-lg hover:bg-cyan-500 transition soft-glow">
+                    <a href="/contact" className="mt-8 inline-flex items-center bg-cyan-600 text-white text-lg font-semibold px-8 py-3 rounded-lg hover:bg-cyan-500 transition soft-glow">
                         Say Hello <PaperPlaneIcon />
-                    </button>
+                    </a>
                 </div>
             </section>
             
@@ -1232,4 +1158,3 @@ export default function PortfolioPage() {
     </div>
   );
 }
-
