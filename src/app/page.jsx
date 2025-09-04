@@ -198,7 +198,7 @@ const XIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="
 const PresentationIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-presentation"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>);
 const PaperPlaneIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-send-horizontal ml-2"><path d="m3 3 3 9-3 9 19-9Z"/><path d="M6 12h16"/></svg>);
 const TerminalIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-terminal"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>);
-const BrainCircuitIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5a3 3 0 1 0-5.993.129M12 5a3 3 0 1 1 5.993.129M12 5a3 3 0 1 1-5.993-.129M12 5a3 3 0 1 0 5.993-.129M12 19a3 3 0 1 0-5.993-.129M12 19a3 3 0 1 1 5.993-.129M12 19a3 3 0 1 1-5.993.129M12 19a3 3 0 1 0 5.993.129M17 12a3 3 0 1 0-5.993.129M17 12a3 3 0 1 1 5.993.129M17 12a3 3 0 1 1-5.993-.129M17 12a3 3 0 1 0 5.993-.129M7 12a3 3 0 1 0-5.993.129M7 12a3 3 0 1 1 5.993.129M7 12a3 3 0 1 1-5.993-.129M7 12a3 3 0 1 0 5.993-.129M12 5a3 3 0 1 0-5.993.129M12 5a3 3 0 1 1 5.993.129M12 5a3 3 0 1 1-5.993-.129M12 5a3 3 0 1 0 5.993-.129M12 19a3 3 0 1 0-5.993-.129M12 19a3 3 0 1 1 5.993.129M12 19a3 3 0 1 1-5.993.129M12 19a3 3 0 1 0 5.993.129M17 12a3 3 0 1 0-5.993.129M17 12a3 3 0 1 1 5.993.129M17 12a3 3 0 1 1-5.993-.129M17 12a3 3 0 1 0 5.993-.129M7 12a3 3 0 1 0-5.993.129M7 12a3 3 0 1 1 5.993.129M7 12a3 3 0 1 1-5.993-.129M7 12a3 3 0 1 0 5.993-.129m-5-7 1.146.128a1 1 0 0 0 .854-.854L5 3m14 9-1.146-.128a1 1 0 0 0-.854.854L19 13m-5 6 1.146.128a1 1 0 0 0 .854-.854L16 19m-9-2 1.146.128a1 1 0 0 0 .854-.854L8 16m-3-4 .128 1.146a1 1 0 0 0 .854.854L7 14M12 5V3m5 9h2m-7 7v2m-7-7H3"/></svg>);
+const BrainCircuitIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5a3 3 0 1 0-5.993.129M12 5a3 3 0 1 1 5.993.129M12 5a3 3 0 1 1-5.993-.129M12 5a3 3 0 1 0 5.993-.129M12 19a3 3 0 1 0-5.993-.129M12 19a3 3 0 1 1 5.993-.129M12 19a3 3 0 1 1-5.993.129M12 19a3 3 0 1 0 5.993.129M17 12a3 3 0 1 0-5.993.129M17 12a3 3 0 1 1 5.993.129M17 12a3 3 0 1 1-5.993-.129M17 12a3 3 0 1 0 5.993-.129M7 12a3 3 0 1 0-5.993.129M7 12a3 3 0 1 1 5.993.129M7 12a3 3 0 1 1-5.993-.129M7 12a3 3 0 1 0 5.993-.129M12 5a3 3 0 1 0-5.993.129M12 5a3 3 0 1 1 5.993.129M12 5a3 3 0 1 1-5.993-.129M12 5a3 3 0 1 0 5.993-.129M12 19a3 3 0 1 0-5.993-.129M12 19a3 3 0 1 1 5.993-.129M12 19a3 3 0 1 1-5.993.129M12 19a3 3 0 1 0 5.993.129M17 12a3 3 0 1 0-5.993.129M17 12a3 3 0 1 1 5.993.129M17 12a3 3 0 1 1-5.993-.129M17 12a3 3 0 1 0 5.993-.129M7 12a3 3 0 1 0-5.993.129M7 12a3 3 0 1 1 5.993.129M7 12a3 3 0 1 1-5.993-.129M7 12a3 3 0 1 0 5.993-.129m-5-7 1.146.128a1 1 0 0 0 .854-.854L5 3m14 9-1.146-.128a1 1 0 0 0-.854.854L19 13m-5 6 1.146.128a1 1 0 0 0 .854-.854L16 19m-9-2 1.146.128a1 1 0 0 0 .854-.854L8 16m-3-4 .128 1.146a1 1 0 0 0 .854.854L7 14M12 5V3m5 9h2m-7 7v2m-7-7H3"/></svg>);
 
 // --- Custom Components ---
 
@@ -645,7 +645,7 @@ const Header = ({ onMenuToggle }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ["about", "experience", "projects", "skills", "leadership", "contact"];
+  const navLinks = ["about", "experience", "projects", "skills", "leadership"];
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/80 backdrop-blur-lg' : 'bg-transparent'}`}>
@@ -671,7 +671,7 @@ const Header = ({ onMenuToggle }) => {
 
 
 const MobileMenu = ({ isOpen, onMenuToggle }) => {
-    const navLinks = ["about", "experience", "projects", "skills", "leadership", "contact"];
+    const navLinks = ["about", "experience", "projects", "skills", "leadership"];
     return (
         <div className={`fixed inset-0 bg-slate-900/95 backdrop-blur-lg z-50 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}>
             <div className="flex justify-end p-6">
@@ -921,7 +921,7 @@ export default function PortfolioPage() {
     projects: useRef(null),
     skills: useRef(null),
     leadership: useRef(null),
-    contact: useRef(null),
+    // contact: useRef(null),
   };
 
   useEffect(() => {
@@ -999,7 +999,7 @@ export default function PortfolioPage() {
   ];
 
   return (
-    <div className="bg-slate-900 text-slate-300 font-sans leading-relaxed">
+    <div className="bg-slate-900 text-slate-300 leading-relaxed">
       <GlobalStyles />
       <CustomCursor />
         <Particles
@@ -1120,7 +1120,7 @@ export default function PortfolioPage() {
                     <h2 className="text-4xl font-bold text-white">Leadership & Community</h2>
                     <div className="w-24 h-1 bg-cyan-500 mx-auto mt-2"></div>
                 </div>
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                     {leadershipItems.map(item => (
                         <div key={item.title} className="glass-card rounded-xl p-6 soft-glow">
                             <div className="flex justify-center text-cyan-400 text-5xl mb-4">{item.icon}</div>
@@ -1158,3 +1158,4 @@ export default function PortfolioPage() {
     </div>
   );
 }
+
