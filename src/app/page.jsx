@@ -12,6 +12,7 @@ const GlobalStyles = () => (
     /* --- General Styles --- */
     body, html {
       cursor: none; /* Hide the default cursor */
+      overflow-x: hidden; /* Prevent horizontal scrolling */
     }
     .soft-glow {
       transition: all 0.3s ease;
@@ -27,6 +28,15 @@ const GlobalStyles = () => (
     }
     
     /* --- Custom Cursor Styles --- */
+    /* Hide custom cursor on touch devices */
+    @media (hover: none) {
+        .custom-cursor-dot, .custom-cursor-outline {
+            display: none !important;
+        }
+        body, html {
+            cursor: auto;
+        }
+    }
     .custom-cursor-dot {
       position: fixed;
       top: 0;
@@ -199,7 +209,7 @@ const XIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="
 const PresentationIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-presentation"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>);
 const PaperPlaneIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-send-horizontal ml-2"><path d="m3 3 3 9-3 9 19-9Z"/><path d="M6 12h16"/></svg>);
 const TerminalIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-terminal"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>);
-const BrainCircuitIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5a3 3 0 1 0-5.993.129M12 5a3 3 0 1 1 5.993.129M12 5a3 3 0 1 1-5.993-.129M12 5a3 3 0 1 0 5.993-.129M12 19a3 3 0 1 0-5.993-.129M12 19a3 3 0 1 1 5.993-.129M12 19a3 3 0 1 1-5.993.129M12 19a3 3 0 1 0 5.993.129M17 12a3 3 0 1 0-5.993.129M17 12a3 3 0 1 1 5.993.129M17 12a3 3 0 1 1-5.993-.129M17 12a3 3 0 1 0 5.993-.129M7 12a3 3 0 1 0-5.993.129M7 12a3 3 0 1 1 5.993.129M7 12a3 3 0 1 1-5.993-.129M7 12a3 3 0 1 0 5.993-.129M12 5a3 3 0 1 0-5.993.129M12 5a3 3 0 1 1 5.993.129M12 5a3 3 0 1 1-5.993-.129M12 5a3 3 0 1 0 5.993-.129M12 19a3 3 0 1 0-5.993-.129M12 19a3 3 0 1 1 5.993-.129M12 19a3 3 0 1 1-5.993.129M12 19a3 3 0 1 0 5.993.129M17 12a3 3 0 1 0-5.993.129M17 12a3 3 0 1 1 5.993.129M17 12a3 3 0 1 1-5.993-.129M17 12a3 3 0 1 0 5.993-.129M7 12a3 3 0 1 0-5.993.129M7 12a3 3 0 1 1 5.993.129M7 12a3 3 0 1 1-5.993-.129M7 12a3 3 0 1 0 5.993-.129m-5-7 1.146.128a1 1 0 0 0 .854-.854L5 3m14 9-1.146-.128a1 1 0 0 0-.854.854L19 13m-5 6 1.146.128a1 1 0 0 0 .854-.854L16 19m-9-2 1.146.128a1 1 0 0 0 .854-.854L8 16m-3-4 .128 1.146a1 1 0 0 0 .854.854L7 14M12 5V3m5 9h2m-7 7v2m-7-7H3"/></svg>);
+const BrainCircuitIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5a3 3 0 1 0-5.993.129M12 5a3 3 0 1 1 5.993.129M12 5a3 3 0 1 1-5.993-.129M12 5a3 3 0 1 0 5.993-.129M12 19a3 3 0 1 0-5.993-.129M12 19a3 3 0 1 1 5.993.129M12 19a3 3 0 1 1-5.993.129M12 19a3 3 0 1 0 5.993.129M17 12a3 3 0 1 0-5.993.129M17 12a3 3 0 1 1 5.993.129M17 12a3 3 0 1 1-5.993-.129M17 12a3 3 0 1 0 5.993.129M7 12a3 3 0 1 0-5.993.129M7 12a3 3 0 1 1 5.993.129M7 12a3 3 0 1 1-5.993-.129M7 12a3 3 0 1 0 5.993.129M12 5a3 3 0 1 0-5.993.129M12 5a3 3 0 1 1 5.993.129M12 5a3 3 0 1 1-5.993-.129M12 5a3 3 0 1 0 5.993.129M12 19a3 3 0 1 0-5.993-.129M12 19a3 3 0 1 1 5.993.129M12 19a3 3 0 1 1-5.993.129M12 19a3 3 0 1 0 5.993.129M17 12a3 3 0 1 0-5.993.129M17 12a3 3 0 1 1 5.993.129M17 12a3 3 0 1 1-5.993-.129M17 12a3 3 0 1 0 5.993.129M7 12a3 3 0 1 0-5.993.129M7 12a3 3 0 1 1 5.993.129M7 12a3 3 0 1 1-5.993-.129M7 12a3 3 0 1 0 5.993.129m-5-7 1.146.128a1 1 0 0 0 .854-.854L5 3m14 9-1.146-.128a1 1 0 0 0-.854.854L19 13m-5 6 1.146.128a1 1 0 0 0 .854-.854L16 19m-9-2 1.146.128a1 1 0 0 0 .854-.854L8 16m-3-4 .128 1.146a1 1 0 0 0 .854.854L7 14M12 5V3m5 9h2m-7 7v2m-7-7H3"/></svg>);
 
 // --- Custom Components ---
 
@@ -492,7 +502,11 @@ const FuzzyText = ({
     };
   }, [children, fontSize, fontWeight, fontFamily, color, enableHover, baseIntensity, hoverIntensity]);
 
-  return <canvas ref={canvasRef} />;
+    return (
+        <div className="w-full flex justify-center">
+            <canvas ref={canvasRef} style={{ maxWidth: '100%' }} />
+        </div>
+    );
 };
 
 const TrueFocus = ({
@@ -646,7 +660,7 @@ const Header = ({ onMenuToggle }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ["about", "experience", "projects", "skills", "leadership", "contact"];
+  const navLinks = ["about", "experience", "projects", "skills", "leadership"];
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/80 backdrop-blur-lg' : 'bg-transparent'}`}>
@@ -655,10 +669,10 @@ const Header = ({ onMenuToggle }) => {
           <a href="#" className="text-2xl font-bold text-cyan-400 transition hover:text-cyan-300 neon-text">MD</a>
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map(link => (
-              <a key={link} href={link === 'contact' ? '/contact' : `#${link}`} className="text-lg capitalize text-slate-300 hover:text-cyan-400 transition-colors duration-300">{link}</a>
+              <a key={link} href={`#${link}`} className="text-lg capitalize text-slate-300 hover:text-cyan-400 transition-colors duration-300">{link}</a>
             ))}
           </nav>
-            <a href="/contact" className="hidden md:inline-block px-5 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-lg transition-all duration-300 text-white font-semibold">
+            <a href="#contact" className="hidden md:inline-block px-5 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-lg transition-all duration-300 text-white font-semibold">
               Contact
             </a>
           <button onClick={onMenuToggle} className="md:hidden text-slate-300">
@@ -672,7 +686,7 @@ const Header = ({ onMenuToggle }) => {
 
 
 const MobileMenu = ({ isOpen, onMenuToggle }) => {
-    const navLinks = ["about", "experience", "projects", "skills", "leadership", "contact"];
+    const navLinks = ["about", "experience", "projects", "skills", "leadership"];
     return (
         <div className={`fixed inset-0 bg-slate-900/95 backdrop-blur-lg z-50 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}>
             <div className="flex justify-end p-6">
@@ -682,9 +696,9 @@ const MobileMenu = ({ isOpen, onMenuToggle }) => {
             </div>
             <nav className="flex flex-col items-center justify-center h-full -mt-16 space-y-8">
                 {navLinks.map(link => (
-                  <a key={link} href={link === 'contact' ? '/contact' : `#${link}`} onClick={onMenuToggle} className="text-3xl capitalize text-slate-300 hover:text-cyan-400 transition-colors duration-300">{link}</a>
+                  <a key={link} href={`#${link}`} onClick={onMenuToggle} className="text-3xl capitalize text-slate-300 hover:text-cyan-400 transition-colors duration-300">{link}</a>
                 ))}
-                  <a href="/contact" onClick={onMenuToggle} className="mt-4 inline-block px-8 py-3 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 font-semibold">
+                  <a href="#contact" onClick={onMenuToggle} className="mt-4 inline-block px-8 py-3 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 font-semibold">
                     Contact
                   </a>
             </nav>
@@ -738,10 +752,10 @@ const HeroSection = ({ onResumeView }) => {
 
     return (
         <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center">
-            <div className="max-w-3xl">
+            <div className="w-full max-w-3xl">
                  <div className="pb-2 flex justify-center">
                     <FuzzyText
-                        fontSize="clamp(3rem, 10vw, 4.5rem)"
+                        fontSize="clamp(2.5rem, 12vw, 4.5rem)"
                         fontWeight={700}
                         color="#E2E8F0"
                         baseIntensity={0.1}
@@ -777,12 +791,12 @@ const HeroSection = ({ onResumeView }) => {
                             Get My Resume
                         </button>
                     ) : (
-                        <div className="font-mono text-left max-w-xl mx-auto bg-black bg-opacity-50 rounded-lg border border-slate-700 p-4 text-sm glass-card">
+                        <div className="font-mono text-left w-full max-w-xl mx-auto bg-black bg-opacity-50 rounded-lg border border-slate-700 p-2 sm:p-4 text-xs sm:text-sm glass-card">
                             <div className="text-slate-400 mb-2"># To view, type the command and press Enter:</div>
-                            <div className="text-cyan-400 mb-2">&gt; {RESUME_COMMAND}</div>
+                            <div className="text-cyan-400 mb-2 break-all">&gt; {RESUME_COMMAND}</div>
                             <div className="h-24 overflow-y-auto pr-2">
                                {output.map((line, index) => (
-                                    <div key={index}>
+                                    <div key={index} className="break-words">
                                         {line.type === 'input' && <p><span className="text-cyan-400">$</span> {line.text}</p>}
                                         {line.type === 'output' && <p className="text-slate-300">{line.text}</p>}
                                         {line.type === 'error' && <p className="text-red-400">{line.text}</p>}
@@ -799,6 +813,7 @@ const HeroSection = ({ onResumeView }) => {
                                     onChange={(e) => setCommand(e.target.value)}
                                     className="bg-transparent border-none text-slate-300 w-full focus:ring-0 p-0"
                                     autoComplete="off"
+                                    spellCheck="false"
                                 />
                             </form>
                         </div>
@@ -1027,7 +1042,7 @@ export default function PortfolioPage() {
           <section ref={el => sectionRefs.about.current = el} id="about" className={getSectionClass("about")}>
              <div className="text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                    <ScrollFloat>A Little About My Journey</ScrollFloat>
+                    <ScrollFloat>A Little About Me!</ScrollFloat>
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-slate-400">
                     <ShinyText text="Why I build, break, and build again." />
@@ -1035,7 +1050,7 @@ export default function PortfolioPage() {
             </div>
              <div className="mt-16 max-w-4xl mx-auto">
                 <ScrollReveal>
-                    <div className="glass-card soft-glow rounded-2xl p-8 md:p-12">
+                    <div className="glass-card soft-glow rounded-2xl p-6 sm:p-8 md:p-12">
                         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                             <div className="flex-shrink-0 text-cyan-400 opacity-50">
                                 <BrainCircuitIcon />
@@ -1100,7 +1115,7 @@ export default function PortfolioPage() {
           {/* --- Skills (Technical Arsenal) --- */}
             <section ref={el => sectionRefs.skills.current = el} id="skills" className={getSectionClass("skills")}>
                 <div className="text-center">
-                    <h2 className="text-4xl font-bold text-white">Technical Arsenal</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Technical Arsenal</h2>
                     <div className="w-24 h-1 bg-cyan-500 mx-auto mt-2"></div>
                 </div>
                 <div className="mt-16 max-w-5xl mx-auto">
@@ -1123,7 +1138,7 @@ export default function PortfolioPage() {
           {/* --- Leadership & Community --- */}
             <section ref={el => sectionRefs.leadership.current = el} id="leadership" className={getSectionClass("leadership")}>
                  <div className="text-center">
-                    <h2 className="text-4xl font-bold text-white">Leadership & Community</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Leadership & Community</h2>
                     <div className="w-24 h-1 bg-cyan-500 mx-auto mt-2"></div>
                 </div>
                 <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -1142,10 +1157,11 @@ export default function PortfolioPage() {
         <footer className="py-16">
             <section ref={el => sectionRefs.contact.current = el} id="contact" className={getSectionClass("contact")}>
                  <div className="container mx-auto px-6 text-center">
-                    <h2 className="text-4xl font-bold text-white">Get In Touch</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Get In Touch</h2>
                     <div className="w-24 h-1 bg-cyan-500 mx-auto mt-2"></div>
                     <p className="mt-6 text-lg max-w-2xl mx-auto text-slate-400">I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out!</p>
                     <a href="/contact" className="mt-8 inline-flex items-center bg-cyan-600 text-white text-lg font-semibold px-8 py-3 rounded-lg hover:bg-cyan-500 transition soft-glow">
+    
                         Say Hello <PaperPlaneIcon />
                     </a>
                 </div>
@@ -1164,4 +1180,3 @@ export default function PortfolioPage() {
     </div>
   );
 }
-
