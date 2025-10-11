@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { motion, useInView } from "framer-motion";
-import {TrophyIcon, PresentationIcon, AwardIcon } from 'your-icon-library';
+// import {TrophyIcon, PresentationIcon, AwardIcon } from 'your-icon-library';
 
 
 // --- Global Styles for custom effects ---
@@ -1101,30 +1101,63 @@ const leadershipItems = [
   { icon: <AwardIcon />, title: 'Crown Jewel of Excellence', description: 'Recognized as Best Performer at the IEEE Student Branch.' },
 
   // New items:
-  {
-    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/IEEE_WIE_logo.svg" alt="IEEE WIE" style={{ width: 24, height: 24 }} />,
+ {
+    icon: (
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/1/19/IEEE_WIE_logo.svg"
+        alt="IEEE WIE"
+        style={{ width: 24, height: 24 }}
+      />
+    ),
     title: 'IEEE WIE ILS ’24 – Organizer Award',
     description: 'Awarded for organizing the Women in Engineering International Leadership Summit.'
   },
   {
-    icon: <img src="https://cdn-icons-png.flaticon.com/512/2921/2921797.png" alt="coordination" style={{ width: 24, height: 24 }} />,
+    icon: (
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/2921/2921797.png"
+        alt="coordination"
+        style={{ width: 24, height: 24 }}
+      />
+    ),
     title: 'YESIST12 Pilot Coordinator',
-    description: 'Represented the Innovation Challenge track globally, steering a team of 150+ pilots including professors, CEOs, founders, and students.'
+    description:
+      'Represented the Innovation Challenge track globally, steering a team of 150+ pilots including professors, CEOs, founders, and students.'
   },
   {
-    icon: <img src="https://cdn-icons-png.flaticon.com/512/190/190406.png" alt="volunteer" style={{ width: 24, height: 24 }} />,
+    icon: (
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/190/190406.png"
+        alt="volunteer"
+        style={{ width: 24, height: 24 }}
+      />
+    ),
     title: 'Best Volunteer – IEEE PEC SB',
     description: 'Honored for outstanding volunteer service at the college level.'
   },
   {
-    icon: <img src="https://cdn-icons-png.flaticon.com/512/2913/2913651.png" alt="community" style={{ width: 24, height: 24 }} />,
+    icon: (
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/2913/2913651.png"
+        alt="community"
+        style={{ width: 24, height: 24 }}
+      />
+    ),
     title: 'Lead @ AI GEEKS Chennai',
-    description: 'Organized and led AI community events in Chennai. (See: bento.me/ai-geeks-chennai)'
+    description:
+      'Organized and led AI community events in Chennai. (See: bento.me/ai-geeks-chennai)'
   },
   {
-    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Shield_Cybersecurity_Icon.svg" alt="cybersecurity" style={{ width: 24, height: 24 }} />,
+    icon: (
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/5/56/Shield_Cybersecurity_Icon.svg"
+        alt="cybersecurity"
+        style={{ width: 24, height: 24 }}
+      />
+    ),
     title: 'Campus Organizer – Bits n Bytes Cybersecurity',
-    description: 'Led a team of 1,000+ students to drive cybersecurity education and awareness at campus level.'
+    description:
+      'Led a team of 1,000+ students to drive cybersecurity education and awareness at campus level.'
   }
 ];
 
