@@ -1028,7 +1028,7 @@ export default function PortfolioPage() {
       { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
       { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
       { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-      { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+      // { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
       { name: 'Bootstrap', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
       { name: 'SQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
       { name: 'SQLite', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg' },
@@ -1043,7 +1043,7 @@ export default function PortfolioPage() {
     { name: 'LangChain', icon: 'https://avatars.githubusercontent.com/u/120268689?s=200&v=4' },
     { name: 'OpenCV', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
     { name: 'PyTorch', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
-    { name: 'Scikit-learn', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg' },
+    // { name: 'Scikit-learn', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg' },
     { name: 'Numpy', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
     { name: 'Pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
 
@@ -1051,26 +1051,26 @@ export default function PortfolioPage() {
     { name: 'VAPT (Vulnerability Assessment & Penetration Testing)', icon: 'https://img.icons8.com/fluency/96/cyber-security.png' },
     { name: 'Secure Coding', icon: 'https://img.icons8.com/plasticine/100/lock.png' },
     { name: 'OWASP Top 10', icon: 'https://img.icons8.com/color/96/security-checked.png' },
-    { name: 'Burp Suite', icon: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Burp_Suite_Logo.png' },
-    { name: 'Wireshark', icon: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Wireshark_icon.svg' },
-    { name: 'Nmap', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Nmap-logo.svg' },
+    // { name: 'Burp Suite', icon: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Burp_Suite_Logo.png' },
+    // { name: 'Wireshark', icon: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Wireshark_icon.svg' },
+    // { name: 'Nmap', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Nmap-logo.svg' },
     { name: 'Kali Linux', icon: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Kali-dragon-icon.svg' },
-    { name: 'Metasploit', icon: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Metasploit_logo_and_wordmark.svg' },
-    { name: 'Hashcat', icon: 'https://seeklogo.com/images/H/hashcat-logo-53195AB5F6-seeklogo.com.png' },
-    { name: 'John the Ripper', icon: 'https://avatars.githubusercontent.com/u/2019912?s=200&v=4' },
+    // { name: 'Metasploit', icon: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Metasploit_logo_and_wordmark.svg' },
+    // { name: 'Hashcat', icon: 'https://seeklogo.com/images/H/hashcat-logo-53195AB5F6-seeklogo.com.png' },
+    // { name: 'John the Ripper', icon: 'https://avatars.githubusercontent.com/u/2019912?s=200&v=4' },
 
     // Cryptography & Blockchain
-    { name: 'Blockchain Security', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg' },
-    { name: 'MetaMask', icon: 'https://seeklogo.com/images/M/metamask-logo-09EDE53DBD-seeklogo.com.png' },
+    // { name: 'Blockchain Security', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg' },
+    // { name: 'MetaMask', icon: 'https://seeklogo.com/images/M/metamask-logo-09EDE53DBD-seeklogo.com.png' },
     { name: 'Public/Private Key Encryption', icon: 'https://img.icons8.com/ios-filled/100/key-security.png' },
     { name: 'JWT', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' }, // common with secure auth
     { name: 'OAuth 2.0', icon: 'https://cdn-icons-png.flaticon.com/512/3281/3281306.png' },
 
     // Forensics & Monitoring
     { name: 'Network Forensics', icon: 'https://img.icons8.com/color/96/network-cable.png' },
-    { name: 'SIEM Tools', icon: 'https://cdn.worldvectorlogo.com/logos/splunk-2.svg' },
+    // { name: 'SIEM Tools', icon: 'https://cdn.worldvectorlogo.com/logos/splunk-2.svg' },
     { name: 'Firewall Management', icon: 'https://img.icons8.com/color/96/firewall.png' },
-    { name: 'Incident Response', icon: 'https://img.icons8.com/ios-filled/100/incident.png' }
+    // { name: 'Incident Response', icon: 'https://img.icons8.com/ios-filled/100/incident.png' }
   ]
   },
 
@@ -1084,7 +1084,7 @@ export default function PortfolioPage() {
       { name: 'Selenium', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg' },
       { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
       { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
-      { name: 'Supabase', icon: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png' },
+      // { name: 'Supabase', icon: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png' },
       { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
     ]
   }
