@@ -1095,7 +1095,7 @@ export default function PortfolioPage() {
 
 
 const leadershipItems = [
-  { icon: <UsersIcon />, title: 'IEEE Vice Chair', description: 'Leading the PECSB, fostering a community of student engineers.' },
+  { icon: <CustomUsersIcon />, title: 'IEEE Vice Chair', description: 'Leading the PECSB, fostering a community of student engineers.' },
   { icon: <TrophyIcon />, title: 'Top 6 Rank', description: 'Achieved 6th place among 1,096 participants at PECTEAM 2K23.' },
   { icon: <PresentationIcon />, title: '100+ Events Organized', description: 'Led and organized workshops for over 1,200 participants.' },
   { icon: <AwardIcon />, title: 'Crown Jewel of Excellence', description: 'Recognized as Best Performer at the IEEE Student Branch.' },
