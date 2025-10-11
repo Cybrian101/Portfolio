@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { motion, useInView } from "framer-motion";
+import { UsersIcon, TrophyIcon, PresentationIcon, AwardIcon } from 'your-icon-library';
 
 
 // --- Global Styles for custom effects ---
@@ -964,54 +965,169 @@ export default function PortfolioPage() {
   ];
 
   const projects = [
-    { title: 'Biomedical RAG Chatbot', description: 'This was a deep dive into the world of LLMs. I engineered a GenAI system that uses external knowledge to give trustworthy answers, fighting model hallucination head-on. Seeing it refuse to "make things up" for the first time was a huge win.', tags: ['GenAI', 'Python', 'LangChain', 'FastAPI'], link: 'https://github.com/Cybrian101/Chatbot-using-RAG' },
-    { title: 'Social Media Data Extractor', description: 'As Project Lead for a Smart India Hackathon, I guided a team of six to build a Selenium-based tool. It was a masterclass in automation and leadership, and we managed to cut down manual data auditing by over 90%.', tags: ['Automation', 'Selenium', 'Python', 'Leadership'], link: 'https://github.com/Cybrian101/SIH-Project' },
-    { title: 'DASHAI – AI Appointment Scheduler', description: 'Another hackathon project where we tackled a real-world problem. Our AI-powered scheduler successfully cut hospital wait times by half. It was rewarding to see code make a tangible difference.', tags: ['AI', 'Python', 'SQLite', 'Healthcare'], link: 'https://github.com/Cybrian101/DASHAI' }
-  ];
+  {
+    title: 'Biomedical RAG Chatbot',
+    description: 'This was a deep dive into the world of LLMs. I engineered a GenAI system that uses external knowledge to give trustworthy answers, fighting model hallucination head-on. Seeing it refuse to "make things up" for the first time was a huge win.',
+    tags: ['GenAI', 'Python', 'LangChain', 'FastAPI'],
+    link: 'https://github.com/Cybrian101/Chatbot-using-RAG'
+  },
+  {
+    title: 'Social Media Data Extractor',
+    description: 'As Project Lead for a Smart India Hackathon, I guided a team of six to build a Selenium-based tool. It was a masterclass in automation and leadership, and we managed to cut down manual data auditing by over 90%.',
+    tags: ['Automation', 'Selenium', 'Python', 'Leadership'],
+    link: 'https://github.com/Cybrian101/SIH-Project'
+  },
+  {
+    title: 'DASHAI – AI Appointment Scheduler',
+    description: 'Another hackathon project where we tackled a real-world problem. Our AI-powered scheduler successfully cut hospital wait times by half. It was rewarding to see code make a tangible difference.',
+    tags: ['AI', 'Python', 'SQLite', 'Healthcare'],
+    link: 'https://github.com/Cybrian101/DASHAI'
+  },
+  {
+    title: 'AI-Based Recruiting System',
+    description: 'An intelligent hiring assistant powered by multiple AI agents using `heapq`, `threading`, and `LangChain`. Designed to streamline HR recruiting pipelines, it cuts down evaluation time significantly. The system integrates ML models for candidate profiling and a React + Supabase front end for seamless UI/UX.',
+    tags: ['AI Agents', 'LangChain', 'Threading', 'Python', 'React', 'Supabase', 'ML Models'],
+    link: '' // Add GitHub link when available
+  },
+  {
+    title: 'MiniYou – Open Source Profile Card Generator',
+    description: 'Built an open-source profile card platform at [miniyou.co.in](https://miniyou.co.in), enabling users to create beautiful, shareable personal profile cards with embedded social links—no need to send separate links anymore. Supports OAuth for secure logins.',
+    tags: ['Next.js', 'Supabase', 'OAuth', 'Open Source', 'Tailwind'],
+    link: 'https://miniyou.co.in'
+  },
+  {
+    title: 'LED-Based Smart Horticulture System',
+    description: 'Designed an indoor plant-growth system using controlled red, blue, and green LED lighting, emulating photosynthetically active radiation (PAR). Sensors track nutrient levels, and an automated schedule mimics natural day-night cycles. Optimized for sustainable urban agriculture.',
+    tags: ['IoT', 'LED Control', 'Plant Biology', 'Automation', 'Microcontrollers', 'Python'],
+    link: '' // Add GitHub link when available
+  },
+  {
+    title: 'SEDIT – Secured Digital Transaction System',
+    description: 'SEDIT allows users to safely store and transmit sensitive personal data by linking all identity proofs (e.g., Aadhar, PAN) in a blockchain-secured vault. Uses MetaMask, public-private key encryption, and smart contracts to ensure end-to-end privacy with no third-party interference.',
+    tags: ['Blockchain', 'MetaMask', 'Smart Contracts', 'Encryption', 'Security', 'Web3'],
+    link: '' // Add GitHub link when available
+  },
+  {
+    title: 'ChronoSched – AI Timetable Generator',
+    description: 'A hybrid system using Random Forest and Ant Colony Optimization algorithms to generate conflict-free timetables for multiple departments and sections simultaneously. Ensures teacher and room availability without overlap, handling edge cases and constraints dynamically.',
+    tags: ['Random Forest', 'Ant Colony Optimization', 'AI Planning', 'Python', 'Timetable Scheduling'],
+    link: '' // Add GitHub link when available
+  }
+];
+
   
     const skills = [
-    { 
-        category: "Languages & Frameworks",
-        icons: [
-            { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-            { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-            { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-            { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-            { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
-            { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-            { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-            { name: 'SQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-        ]
-    },
-    { 
-        category: "AI & Cybersecurity", 
-        icons: [
-            { name: 'Generative AI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
-            { name: 'LangChain', icon: 'https://avatars.githubusercontent.com/u/120268689?s=200&v=4' },
-            { name: 'VAPT', icon: 'https://img.icons8.com/fluency/96/cyber-security.png' },
-            { name: 'Secure Coding', icon: 'https://img.icons8.com/plasticine/100/lock.png' },
-        ]
-    },
-    { 
-        category: "Tools & Tech", 
-        icons: [
-            { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-            { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-            { name: 'FastAPI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
-            { name: 'Selenium', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg' },
-            { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
-            { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
-        ]
-    }
-  ];
+  { 
+    category: "Languages & Frameworks",
+    icons: [
+      { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+      { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+      { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+      { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+      { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
+      { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+      { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+      { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+      { name: 'Bootstrap', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
+      { name: 'SQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+      { name: 'SQLite', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg' },
+      { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+      { name: 'Express', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' }
+    ]
+  },
+  { 
+  category: "AI & Cybersecurity", 
+  icons: [
+    { name: 'Generative AI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
+    { name: 'LangChain', icon: 'https://avatars.githubusercontent.com/u/120268689?s=200&v=4' },
+    { name: 'OpenCV', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
+    { name: 'PyTorch', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
+    { name: 'Scikit-learn', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg' },
+    { name: 'Numpy', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
+    { name: 'Pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
+
+    // Core Cybersecurity
+    { name: 'VAPT (Vulnerability Assessment & Penetration Testing)', icon: 'https://img.icons8.com/fluency/96/cyber-security.png' },
+    { name: 'Secure Coding', icon: 'https://img.icons8.com/plasticine/100/lock.png' },
+    { name: 'OWASP Top 10', icon: 'https://img.icons8.com/color/96/security-checked.png' },
+    { name: 'Burp Suite', icon: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Burp_Suite_Logo.png' },
+    { name: 'Wireshark', icon: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Wireshark_icon.svg' },
+    { name: 'Nmap', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Nmap-logo.svg' },
+    { name: 'Kali Linux', icon: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Kali-dragon-icon.svg' },
+    { name: 'Metasploit', icon: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Metasploit_logo_and_wordmark.svg' },
+    { name: 'Hashcat', icon: 'https://seeklogo.com/images/H/hashcat-logo-53195AB5F6-seeklogo.com.png' },
+    { name: 'John the Ripper', icon: 'https://avatars.githubusercontent.com/u/2019912?s=200&v=4' },
+
+    // Cryptography & Blockchain
+    { name: 'Blockchain Security', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg' },
+    { name: 'MetaMask', icon: 'https://seeklogo.com/images/M/metamask-logo-09EDE53DBD-seeklogo.com.png' },
+    { name: 'Public/Private Key Encryption', icon: 'https://img.icons8.com/ios-filled/100/key-security.png' },
+    { name: 'JWT', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' }, // common with secure auth
+    { name: 'OAuth 2.0', icon: 'https://cdn-icons-png.flaticon.com/512/3281/3281306.png' },
+
+    // Forensics & Monitoring
+    { name: 'Network Forensics', icon: 'https://img.icons8.com/color/96/network-cable.png' },
+    { name: 'SIEM Tools', icon: 'https://cdn.worldvectorlogo.com/logos/splunk-2.svg' },
+    { name: 'Firewall Management', icon: 'https://img.icons8.com/color/96/firewall.png' },
+    { name: 'Incident Response', icon: 'https://img.icons8.com/ios-filled/100/incident.png' }
+  ]
+  },
+
+  { 
+    category: "Tools & Tech", 
+    icons: [
+      { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+      { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
+      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+      { name: 'FastAPI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
+      { name: 'Selenium', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg' },
+      { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
+      { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
+      { name: 'Supabase', icon: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png' },
+      { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+    ]
+  }
+];
 
 
-  const leadershipItems = [
-      { icon: <UsersIcon />, title: 'IEEE Vice Chair', description: 'Leading the PECSB, fostering a community of student engineers.' },
-      { icon: <TrophyIcon />, title: 'Top 6 Rank', description: 'Achieved 6th place among 1096 participants at PECTEAM 2K23.' },
-      { icon: <PresentationIcon />, title: '100+ Events Organized', description: 'Led and organized workshops for over 1200 participants.'},
-      { icon: <AwardIcon />, title: 'Crown Jewel of Excellence', description: 'Recognized as Best Performer at the IEEE Student Branch.'}
-  ];
+
+
+
+const leadershipItems = [
+  { icon: <UsersIcon />, title: 'IEEE Vice Chair', description: 'Leading the PECSB, fostering a community of student engineers.' },
+  { icon: <TrophyIcon />, title: 'Top 6 Rank', description: 'Achieved 6th place among 1,096 participants at PECTEAM 2K23.' },
+  { icon: <PresentationIcon />, title: '100+ Events Organized', description: 'Led and organized workshops for over 1,200 participants.' },
+  { icon: <AwardIcon />, title: 'Crown Jewel of Excellence', description: 'Recognized as Best Performer at the IEEE Student Branch.' },
+
+  // New items:
+  {
+    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/IEEE_WIE_logo.svg" alt="IEEE WIE" style={{ width: 24, height: 24 }} />,
+    title: 'IEEE WIE ILS ’24 – Organizer Award',
+    description: 'Awarded for organizing the Women in Engineering International Leadership Summit.'
+  },
+  {
+    icon: <img src="https://cdn-icons-png.flaticon.com/512/2921/2921797.png" alt="coordination" style={{ width: 24, height: 24 }} />,
+    title: 'YESIST12 Pilot Coordinator',
+    description: 'Represented the Innovation Challenge track globally, steering a team of 150+ pilots including professors, CEOs, founders, and students.'
+  },
+  {
+    icon: <img src="https://cdn-icons-png.flaticon.com/512/190/190406.png" alt="volunteer" style={{ width: 24, height: 24 }} />,
+    title: 'Best Volunteer – IEEE PEC SB',
+    description: 'Honored for outstanding volunteer service at the college level.'
+  },
+  {
+    icon: <img src="https://cdn-icons-png.flaticon.com/512/2913/2913651.png" alt="community" style={{ width: 24, height: 24 }} />,
+    title: 'Lead @ AI GEEKS Chennai',
+    description: 'Organized and led AI community events in Chennai. (See: bento.me/ai-geeks-chennai)'
+  },
+  {
+    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Shield_Cybersecurity_Icon.svg" alt="cybersecurity" style={{ width: 24, height: 24 }} />,
+    title: 'Campus Organizer – Bits n Bytes Cybersecurity',
+    description: 'Led a team of 1,000+ students to drive cybersecurity education and awareness at campus level.'
+  }
+];
+
 
   const socialLinks = [
       { icon: <GithubIcon />, href: 'https://github.com/Cybrian101', name: 'GitHub' },
