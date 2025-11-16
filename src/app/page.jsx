@@ -970,19 +970,19 @@ export default function PortfolioPage() {
     title: 'Biomedical RAG Chatbot',
     description: 'This was a deep dive into the world of LLMs. I engineered a GenAI system that uses external knowledge to give trustworthy answers, fighting model hallucination head-on. Seeing it refuse to "make things up" for the first time was a huge win.',
     tags: ['GenAI', 'Python', 'LangChain', 'FastAPI'],
-    link: 'https://github.com/Cybrian101/Chatbot-using-RAG'
+    link: ''
   },
   {
     title: 'Social Media Data Extractor',
     description: 'As Project Lead for a Smart India Hackathon, I guided a team of six to build a Selenium-based tool. It was a masterclass in automation and leadership, and we managed to cut down manual data auditing by over 90%.',
     tags: ['Automation', 'Selenium', 'Python', 'Leadership'],
-    link: 'https://github.com/Cybrian101/SIH-Project'
+    link: ''
   },
   {
     title: 'DASHAI – AI Appointment Scheduler',
     description: 'Another hackathon project where we tackled a real-world problem. Our AI-powered scheduler successfully cut hospital wait times by half. It was rewarding to see code make a tangible difference.',
     tags: ['AI', 'Python', 'SQLite', 'Healthcare'],
-    link: 'https://github.com/Cybrian101/DASHAI'
+    link: ''
   },
   {
     title: 'AI-Based Recruiting System',
@@ -994,7 +994,7 @@ export default function PortfolioPage() {
     title: 'MiniYou – Open Source Profile Card Generator',
     description: 'Built an open-source profile card platform at [miniyou.co.in](https://miniyou.co.in), enabling users to create beautiful, shareable personal profile cards with embedded social links—no need to send separate links anymore. Supports OAuth for secure logins.',
     tags: ['Next.js', 'Supabase', 'OAuth', 'Open Source', 'Tailwind'],
-    link: 'https://miniyou.co.in'
+    link: ''
   },
   {
     title: 'LED-Based Smart Horticulture System',
